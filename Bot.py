@@ -49,8 +49,8 @@ znamenatel_pyat = "Пятница. \n \nНоводаниловская набе�
 
 
 #подключение к сообществу вк и извлечение расписания с файла
-#token = os.environ.get("bot_tocken")
-vk_session = VkApi(token="d39a5d20265f03f8038a99697f8bf267320d761a30efaa0d3a4ba8cf8dc3f01b49c79344ceaffb404f8de")
+token = os.environ.get("bot_tocken")
+vk_session = VkApi(token=token)
 longpoll = VkBotLongPoll(vk_session, groupsession)
 vk = vk_session.get_api()
 raspis_chisl = (voskresenye, chislitel_poned, chislitel_vtor, chislitel_sred, chislitel_chet, chislitel_pyat, subbota)
