@@ -12,6 +12,7 @@ from vk_api.bot_longpoll import VkBotLongPoll
 from vk_api.bot_longpoll import VkBotEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
+print(time.ctime())
 groupsession = "174863134"
 users_id = (37916557, 179099319, 166608781, 214172854, 156660737, 171561963, 409943726, 288452948, 146482440, 49920565, 158855545, 54790058, 157485694, 22440645)
 
