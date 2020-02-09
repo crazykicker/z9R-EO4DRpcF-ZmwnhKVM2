@@ -23,7 +23,7 @@ chislitel_poned = open("poned_shisl.txt").read()
 chislitel_vtor = open("vtor_shils.txt").read()
 #print(chislitel_vtor)
 
-chislitel_sred = open("sred_shisl.txt").read()
+chislitel_sred = open("sred_chislit.txt").read()
 #print(chislitel_sred)
 
 chislitel_chet = open("chet_shisl.txt").read()
