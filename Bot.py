@@ -26,7 +26,7 @@ chislitel_vtor = open("vtor_shils.txt").read()
 chislitel_sred = open("sred_chislit.txt").read()
 #print(chislitel_sred)
 
-chislitel_chet = open("chet_shisl.txt").read()
+chislitel_chet = open("chet_chislit.txt").read()
 #print(chislitel_chet)
 
 chislitel_pyat = open("pyat.txt").read()
