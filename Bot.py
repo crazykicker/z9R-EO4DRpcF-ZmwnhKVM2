@@ -166,9 +166,9 @@ def week_check(case1, case2):
     weeckcheck = int(strftime("%W", weekcase))
     #DEBUG print(weeckcheck)
     if weeckcheck % 2 == 0:
-        raspis_if_nedela_znam(case1, case2, firsttext, secondtext)
-    else:
         raspis_if_nedela_chisl(case1, case2, firsttext, secondtext)
+    else:
+        raspis_if_nedela_znam(case1, case2, firsttext, secondtext)
 
 #проверка дня недели для числителя
 def raspis_if_nedela_chisl(case1, case2, firsttext, secondtext):
