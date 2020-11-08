@@ -96,12 +96,7 @@ def create_calc(id):
                     except:
                         vk.messages.send(user_id=user, random_id=0,
                                          message="Неккоректный ввод. Введите стоимость покупки.")
-
-
-
-
-
-
+                      
 while True:
      for event in longpoll.listen():
          if event.type == VkBotEventType.MESSAGE_NEW:
