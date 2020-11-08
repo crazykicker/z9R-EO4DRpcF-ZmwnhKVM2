@@ -1,3 +1,4 @@
+import time
 import requests
 from datetime import datetime
 from vk_api import VkApi
@@ -85,6 +86,7 @@ def create_calc(id):
 
                 elif text == "выход":
                     create_keyboard(user, "Выхожу....")
+                    time.sleep(1)
                     return
 
                 else:
@@ -92,6 +94,7 @@ def create_calc(id):
                         count = float(text)
                         vk.messages.send(user_id=user, random_id=0, message=create_price(count))
                         create_keyboard(user, "Удачного дропа!")
+                        time.sleep(1)
                         return
                     except:
                         vk.messages.send(user_id=user, random_id=0,
