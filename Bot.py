@@ -77,7 +77,7 @@ while True:
              usertext = event.object.text.lower()
              user = event.object.from_id
              if usertext == "начать":
-                create_keyboard(user, "Привет, чтобы посчитать стоимость в рублях введи её в евро. Чтобы узнать текуущий курс нажми соответсвуюущую кнопку")
+                create_keyboard(user, "Привет, чтобы посчитать стоимость в рублях -  введи её в евро. Чтобы узнать текущий курс - нажми соответсвуюущую кнопку")
 
              elif usertext == "курс":
                  vk.messages.send(user_id=user, random_id=0, message=create_course())
