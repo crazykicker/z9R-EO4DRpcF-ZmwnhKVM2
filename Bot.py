@@ -67,48 +67,27 @@ def create_course():
 
 def create_keyboard(id, message):
     keyboard = VkKeyboard(one_time=False)
-    keyboard.add_button("Калькулятор", color=VkKeyboardColor.POSITIVE)
+    keyboard.add_button("Курс", color=VkKeyboardColor.NEGATIVE)
     vk.messages.send(user_id=id, random_id=0, keyboard=keyboard.get_keyboard(), message=message)
 
-def create_calc(id):
-    keyboard = VkKeyboard(one_time=False)
-    keyboard.add_button("Курс", color=VkKeyboardColor.SECONDARY)
-    keyboard.add_button("Выход", color=VkKeyboardColor.NEGATIVE)
-    vk.messages.send(user_id=id, random_id=0, keyboard=keyboard.get_keyboard(), message="Чтобы расчитать стоимость покупки в рублях введите стоимость товара в евро.")
-    while True:
-        for event in longpoll.listen():
-            if event.type == VkBotEventType.MESSAGE_NEW:
-                text = event.object.text.lower()
-                user = event.object.from_id
-                if text == "курс":
-                    vk.messages.send(user_id=user, random_id=0, message=create_course())
 
-                elif text == "выход":
-                    create_keyboard(user, "Выхожу....")
-                    return
-
-                else:
-                    try:
-                        count = float(text)
-                        vk.messages.send(user_id=user, random_id=0, message=create_price(count))
-                        create_keyboard(user, "Удачного дропа!")
-                        return
-                    except:
-                        vk.messages.send(user_id=user, random_id=0,
-                                         message="Неккоректный ввод. Введите стоимость покупки.")
-                      
 while True:
      for event in longpoll.listen():
          if event.type == VkBotEventType.MESSAGE_NEW:
              usertext = event.object.text.lower()
              user = event.object.from_id
              if usertext == "начать":
-                create_keyboard(user, "Привет, чтобы использовать мои функции нажми соответсвуюущую кнопку")
+                create_keyboard(user, "Привет, чтобы посчитать стоимость в рублях введи её в евро. Чтобы узнать текуущий курс нажми соответсвуюущую кнопку")
 
-             elif usertext == "калькулятор":
-                 create_calc(user)
+             elif usertext == "курс":
+                 vk.messages.send(user_id=user, random_id=0, message=create_course())
 
              else:
-                 vk.messages.send(user_id=user, random_id=0, message="Не знаю такой команды((")
+                 try:
+                    count = float(usertext)
+                    vk.messages.send(user_id=user, random_id=0, message=create_price(count))
+
+                 except:
+                    vk.messages.send(user_id=user, random_id=0, message="Неккоректный ввод. Введите стоимость покупки, или нажмите кнопку 'Курс'.")
 
 
