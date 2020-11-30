@@ -6,12 +6,7 @@ hook = Webhook("https://discord.com/api/webhooks/782830885657116672/6G7KkY2twhRA
 url = "https://www.adidas.com/api/products/F36640/availability"
 url1 = "https://www.adidas.com/yeezy"
 HEADERS = {"Accept": "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36",
-           "Sec-fetch-dest": "document",
-           "Sec-fetch-mode": "navigate",
-           "Sec-fetch-site": "none",
-           "Sec-fetch-user": "?1",
-           "Upgrade-insecure-requests":"1"}
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"}
 
 
 def get_html(url, params=""):
