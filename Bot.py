@@ -4,7 +4,8 @@ import re
 import requests
 from datetime import datetime
 from dhooks import Webhook, Embed
-hook = Webhook("https://discord.com/api/webhooks/782721246755422228/idMIi6L9tcht5lH4vmIf267DuYTKSDbJbmaCDDp57H1CWOMl9InaPUQ9Bi3AvuxEX425")
+
+hook = Webhook(os.environ.get('BOT_HOOK'))
 
 api = os.environ.get('BOT_TOKEN')
 
