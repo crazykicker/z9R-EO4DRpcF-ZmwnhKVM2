@@ -4,13 +4,16 @@ import re
 import requests
 from datetime import datetime
 from dhooks import Webhook, Embed
+hook = Webhook("https://discord.com/api/webhooks/782721246755422228/idMIi6L9tcht5lH4vmIf267DuYTKSDbJbmaCDDp57H1CWOMl9InaPUQ9Bi3AvuxEX425")
+
+api = os.environ.get('BOT_TOKEN')
 
 HEADERS = {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"}
 
 client = discord.Client()
 
-api = os.environ.get('BOT_TOKEN')
+
 
 def create_url():
     now = datetime.now().strftime("%d" + "." + "%m" + "." + "%Y")
