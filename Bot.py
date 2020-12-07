@@ -1,3 +1,4 @@
+import os
 import discord
 import re
 import requests
@@ -9,9 +10,7 @@ HEADERS = {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,imag
 
 client = discord.Client()
 
-hook = Webhook("https://discord.com/api/webhooks/782721246755422228/idMIi6L9tcht5lH4vmIf267DuYTKSDbJbmaCDDp57H1CWOMl9InaPUQ9Bi3AvuxEX425")
-
-api = 'NzgyNjEwNDA5MjgyNjAwOTYx.X8OsvQ.TkL0l6XIO_2Np9B5ssuu7Yfb3s0'
+api = os.environ.get('BOT_TOKEN')
 
 def create_url():
     now = datetime.now().strftime("%d" + "." + "%m" + "." + "%Y")
