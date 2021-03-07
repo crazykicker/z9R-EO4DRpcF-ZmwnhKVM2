@@ -1,3 +1,4 @@
 requests
 dhooks
 discord.py
+bs4
