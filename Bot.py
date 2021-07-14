@@ -35,21 +35,22 @@ def parse_course():
     else:
         print("Error")
 
-def convert_in_rub(cost):
+def convert_in_rub(cost, course):
     cost *= parse_course()
     cost = ("%.2f" % cost)
     return cost
 
 def create_price(price):
+    course = parse_course()
     postage = 36.0
     price_with_vat = price * 0.83333333333
     if price_with_vat < 200.0:
         order_total = price_with_vat + (postage * 0.83333333333)
         vat = order_total - (price + postage)
         info = ("🛒 Сумма корзины: " + str(
-            convert_in_rub(price)) + "р." + "\n" + "💶 Вычет Vat: " + str(
-            convert_in_rub(vat)) + "р." + "\n" + "📦 Доставка: " + str(
-            convert_in_rub(postage)) + "\n" + "💳 Общая сумма заказа: " + str(convert_in_rub(order_total)) + "р.")
+            convert_in_rub(price, course)) + "р." + "\n" + "💶 Вычет Vat: " + str(
+            convert_in_rub(vat, course)) + "р." + "\n" + "📦 Доставка: " + str(
+            convert_in_rub(postage, course)) + "\n" + "💳 Общая сумма заказа: " + str(convert_in_rub(order_total, course)) + "р.")
 
     elif price_with_vat > 200.0:
         vat = price_with_vat - price
@@ -57,9 +58,9 @@ def create_price(price):
         nalog *= 0.15
         order_total = price_with_vat + nalog
         info = ("🛒 Сумма корзины: " + str(
-            convert_in_rub(price)) + "р." + "\n" + "💶 Вычет Vat: " + str(
-            convert_in_rub(vat)) + "р." + "\n" + "🇷🇺 Налог РФ: " + str(
-            float(convert_in_rub(nalog)) + float(1600)) + "р." + "\n" + "💳 Общая сумма заказа: " + str(float(convert_in_rub(order_total)) + float(1600.00)) + "р.")
+            convert_in_rub(price, course)) + "р." + "\n" + "💶 Вычет Vat: " + str(
+            convert_in_rub(vat, course)) + "р." + "\n" + "🇷🇺 Налог РФ: " + str(
+            float(convert_in_rub(nalog, course)) + float(1600)) + "р." + "\n" + "💳 Общая сумма заказа: " + str(float(convert_in_rub(order_total,course)) + float(1600.00)) + "р.")
 
     return info
 
